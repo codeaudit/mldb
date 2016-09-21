@@ -63,6 +63,9 @@ createProcedureCollection(MldbServer * server, RestRouteManager & routeManager);
 std::shared_ptr<FunctionCollection>
 createFunctionCollection(MldbServer * server, RestRouteManager & routeManager);
 
+std::shared_ptr<SensorCollection>
+createSensorCollection(MldbServer * server, RestRouteManager & routeManager);
+
 std::shared_ptr<CredentialRuleCollection>
 createCredentialCollection(MldbServer * server, RestRouteManager & routeManager,
                       std::shared_ptr<CollectionConfigStore> configStore);
@@ -322,6 +325,7 @@ initCollections(std::string credentialsPath,
     datasets = createDatasetCollection(this, *routeManager);
     procedures = createProcedureCollection(this, *routeManager);
     functions = createFunctionCollection(this, *routeManager);
+    sensors = createSensorCollection(this, *routeManager);
     credentials = createCredentialCollection(this, *routeManager, makeCredentialStore());
     types = createTypeClassCollection(this, *routeManager);
 
@@ -329,6 +333,7 @@ initCollections(std::string credentialsPath,
     datasets->loadConfig();
     procedures->loadConfig();
     functions->loadConfig();
+    sensors->loadConfig();
 
     if (false) {
         logRequest = [&] (const HttpRestConnection & conn, const RestRequest & req)
@@ -378,6 +383,7 @@ shutdown()
     datasets.reset();
     procedures.reset();
     functions.reset();
+    sensors.reset();
 
     // Shutdown plugins last, since they may be needed to shut down the other
     // entities.

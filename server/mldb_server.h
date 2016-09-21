@@ -29,6 +29,7 @@ struct PluginCollection;
 struct DatasetCollection;
 struct ProcedureCollection;
 struct FunctionCollection;
+struct SensorCollection;
 struct CredentialRuleCollection;
 struct TypeClassCollection;
 
@@ -36,6 +37,7 @@ struct Plugin;
 struct Dataset;
 struct Procedure;
 struct Function;
+struct Sensor;
 struct CredentialRule;
 
 struct MatrixNamedRow;
@@ -108,6 +110,7 @@ struct MldbServer: public ServicePeer, public EventRecorder {
     std::shared_ptr<FunctionCollection> functions;
     std::shared_ptr<CredentialRuleCollection> credentials;
     std::shared_ptr<TypeClassCollection> types;
+    std::shared_ptr<SensorCollection> sensors;
 
     /** Parse and perform an SQL query. */
     std::vector<MatrixNamedRow> query(const Utf8String& query) const;
