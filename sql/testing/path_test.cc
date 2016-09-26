@@ -27,6 +27,12 @@ using namespace std;
 using namespace Datacratic;
 using namespace Datacratic::MLDB;
 
+BOOST_AUTO_TEST_CASE( test_size )
+{
+    BOOST_CHECK_EQUAL(sizeof(Path), 64);
+}
+
+
 BOOST_AUTO_TEST_CASE(test_element_compare)
 {
     PathElement el;
@@ -431,6 +437,7 @@ BOOST_AUTO_TEST_CASE(test_null)
 
     // pe = path element
     // p = path
+    JML_TRACE_EXCEPTIONS(false);
     BOOST_CHECK_THROW(null + e, ML::Exception); // pe - pe, null lhs
     BOOST_CHECK_THROW(e + null, ML::Exception); // pe - pe, null rhs
     BOOST_CHECK_THROW(null + std::move(e), ML::Exception); // pe - moved pe, null lhs
