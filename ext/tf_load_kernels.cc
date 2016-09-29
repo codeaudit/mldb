@@ -16,6 +16,10 @@
 #include <cassert>
 
 using namespace std;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e50b03a... Hacked together various changes (NOT FOR MERGE) (MLDB-1940)
 #if JML_INTEL_ISA
 using namespace ML;
 #endif

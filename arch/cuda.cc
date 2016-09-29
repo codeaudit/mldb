@@ -22,7 +22,7 @@ namespace ML {
 
 namespace {
 
-Env_Option<bool> debug("DEBUG_CUDA_INIT", false);
+Env_Option<bool> debug("DEBUG_CUDA_INIT", true);
 
 } // file scope
 

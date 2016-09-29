@@ -265,6 +265,8 @@ struct HttpStreamingDownloadSource {
                     return;
 
                 if (resp.code() != 200) {
+                    cerr << "resp.errorCode_ = " << resp.errorCode() << endl;
+                    cerr << "resp.errorMessage = " << resp.errorMessage() << endl;
                     throw ML::Exception("HTTP code %d reading %s\n\n%s",
                                         resp.code(), urlStr.c_str(),
                                         string(errorBody, 0, 1024).c_str());
