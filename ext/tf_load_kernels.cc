@@ -16,10 +16,7 @@
 #include <cassert>
 
 using namespace std;
-<<<<<<< HEAD
-=======
 
->>>>>>> e50b03a... Hacked together various changes (NOT FOR MERGE) (MLDB-1940)
 #if JML_INTEL_ISA
 using namespace ML;
 #endif
@@ -60,7 +57,7 @@ struct AtInit {
         if (!handle) {
             cerr << "Couldn't load any TensorFlow kernels library: "
                  << error << endl;
-            cerr << "Tensorflow operations will abort on launch" << endl;
+            cerr << "Tensorflow operations will abort on kernel launch" << endl;
         }
     }
 

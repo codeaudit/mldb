@@ -44,7 +44,7 @@ PROTO_SRCS := $(shell cat $(TF_MAKEFILE_DIR)/tf_proto_files.txt)
 TENSORFLOW_EIGEN_INCLUDES:=-Imldb/ext/eigen -I$(CWD)/third_party/eigen3
 
 # Include flags for all of Tensorflow
-TENSORFLOW_BASE_INCLUDE_FLAGS := -I$(CWD) -I$(INC) -Imldb/ext/re2 $(TENSORFLOW_EIGEN_INCLUDES) -I$(INC)/external/eigen_archive -I$(INC)/external -Imldb/ext
+TENSORFLOW_BASE_INCLUDE_FLAGS := -I$(CWD) -I$(INC) -Imldb/ext/re2 $(TENSORFLOW_EIGEN_INCLUDES) -I$(INC)/external/eigen_archive -I$(INC)/external -Imldb/ext -DPLATFORM_POSIX=1
 
 
 # There is a lightweight Protobuf format that is created by this program
